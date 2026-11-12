@@ -1,0 +1,17 @@
+{
+  "start": "<input>",
+  "rules": {
+    "<input>": [
+      "gramfuzz_xss_marker",
+      "<bold_open>gramfuzz_xss_marker<bold_close>",
+      "<italic_open>gramfuzz_xss_marker<italic_close>",
+      "&lt;b&gt;gramfuzz_xss_marker&lt;/b&gt;"
+    ],
+    "<bold_open>": ["<less>b<greater>"],
+    "<bold_close>": ["<less>/b<greater>"],
+    "<italic_open>": ["<less>i<greater>"],
+    "<italic_close>": ["<less>/i<greater>"],
+    "<less>": ["<"],
+    "<greater>": [">"]
+  }
+}

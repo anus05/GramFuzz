@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gramfuzz"
+version = "0.1.0"
+description = "Grammar-guided security testing for explicitly authorized web applications"
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = [
+    "security-testing",
+    "fuzzing",
+    "context-free-grammar",
+    "web-application",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Security",
+]
+dependencies = [
+    "requests>=2.31,<3",
+    "PyYAML>=6.0,<7",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+gramfuzz = "gramfuzz.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["gramfuzz*", "core*", "engine*", "analyzer*", "reporting*"]
+exclude = ["tests*", "venv*"]
+
+[tool.setuptools.package-data]
+"gramfuzz.grammars" = ["*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

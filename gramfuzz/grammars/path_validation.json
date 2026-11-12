@@ -1,0 +1,12 @@
+{
+  "start": "<input>",
+  "rules": {
+    "<input>": [
+      "gramfuzz_path_marker",
+      "./gramfuzz_path_marker",
+      "../gramfuzz_path_marker",
+      "../../gramfuzz_path_marker",
+      "..\\gramfuzz_path_marker"
+    ]
+  }
+}

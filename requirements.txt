@@ -1,2 +1,5 @@
-requests
-pytest
+# Combined runtime and test dependencies for legacy requirements.txt workflows.
+# pyproject.toml is the canonical dependency source.
+requests>=2.31,<3
+PyYAML>=6.0,<7
+pytest>=8,<10

@@ -1,0 +1,11 @@
+{
+  "start": "<input>",
+  "rules": {
+    "<input>": [
+      "gramfuzz_sql_marker",
+      "'gramfuzz_sql_marker'",
+      "\"gramfuzz_sql_marker\"",
+      "gramfuzz_sql_marker'"
+    ]
+  }
+}
